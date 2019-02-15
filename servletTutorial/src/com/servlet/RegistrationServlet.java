@@ -16,6 +16,7 @@ import com.user.Student;
 /**
  * Servlet implementation class RegistrationServlet
  */
+
 @WebServlet("/RegistrationServlet")
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,16 +24,23 @@ public class RegistrationServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
     public RegistrationServlet() {
+    	
         super();
+        
         // TODO Auto-generated constructor stub
+        
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// TODO Auto-generated method stub
+		
 		Address address = new Address();
 		
 		address.setStreet(request.getParameter("street"));
@@ -64,18 +72,19 @@ public class RegistrationServlet extends HttpServlet {
 		RequestDispatcher rs = request.getRequestDispatcher("account.jsp");
 		
 		rs.forward(request, response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// TODO Auto-generated method stub
+		
 		doGet(request, response);
+		
 	}
-	
-
-	
-	
 	
 }
