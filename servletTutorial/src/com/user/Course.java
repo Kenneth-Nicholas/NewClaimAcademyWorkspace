@@ -6,7 +6,7 @@ public class Course {
 	
 	private String courseName;
 	private String professor;
-	private ArrayList<WeekDay> weekDay = new ArrayList<WeekDay>();
+	private ArrayList<WeekDay> weekDays = new ArrayList<WeekDay>();
 	private String time;
 	private String roomNumber;
 	private String startDate;
@@ -17,13 +17,13 @@ public class Course {
 		
 	}
 
-	public Course(String courseName, String professor, ArrayList<WeekDay> weekDay, String time, String roomNumber, String startDate) {
+	public Course(String courseName, String professor, ArrayList<WeekDay> weekDays, String time, String roomNumber, String startDate) {
 		
 		super();
 		
 		this.courseName = courseName;
 		this.professor = professor;
-		this.weekDay = weekDay;
+		this.weekDays = weekDays;
 		this.time = time;
 		this.roomNumber = roomNumber;
 		this.startDate = startDate;
@@ -54,15 +54,15 @@ public class Course {
 		
 	}
 
-	public ArrayList<WeekDay> getWeekDay() {
+	public ArrayList<WeekDay> getWeekDays() {
 		
-		return weekDay;
+		return weekDays;
 		
 	}
 
-	public void setWeekDay(ArrayList<WeekDay> weekDay) {
+	public void setWeekDays(ArrayList<WeekDay> weekDays) {
 		
-		this.weekDay = weekDay;
+		this.weekDays = weekDays;
 		
 	}
 
@@ -105,7 +105,7 @@ public class Course {
 	@Override
 	public String toString() {
 		
-		return courseName + ", " + professor + ", " + weekDay + ", " + time + ", " + roomNumber + ", " + startDate;
+		return courseName + ", " + professor + ", " + weekDays + ", " + time + ", " + roomNumber + ", " + startDate;
 		
 	}
 
@@ -163,12 +163,12 @@ public class Course {
 		} else if (!time.equals(other.time))
 			return false;
 		
-		if (weekDay == null) {
+		if (weekDays == null) {
 			
-			if (other.weekDay != null)
+			if (other.weekDays != null)
 				return false;
 			
-		} else if (!weekDay.equals(other.weekDay))
+		} else if (!weekDays.equals(other.weekDays))
 			
 			return false;
 		
