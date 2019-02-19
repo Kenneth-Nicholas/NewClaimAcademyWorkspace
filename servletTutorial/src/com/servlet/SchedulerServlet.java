@@ -34,6 +34,16 @@ public class SchedulerServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		HttpSession session = request.getSession(true);
+		
+		ArrayList<Course> courses = (ArrayList<Course>)session.getAttribute("courses");
+		
+		if(courses == null) {
+			
+			courses = new ArrayList<Course>();
+			
+		}
+		
 		ArrayList<WeekDay> weekDays = new ArrayList<WeekDay>();
 		
 		Course course = new Course();
@@ -78,18 +88,18 @@ public class SchedulerServlet extends HttpServlet {
 		
 		course.setWeekDays(weekDays);
 		
-		HttpSession session = request.getSession(true);
+		// session = request.getSession(true);
+		// I commented this out
 		
 		//here will be the courseList instead of course for set attribute. 
 		
 		// We don't loop the part where you set the course attribute because each time a course gets added on the web page, 
 		// a new doGet request is sent.
 		
-		session.setAttribute("course", course);
+        // session.setAttribute("course", course);
+		// commented this out
 		
 		// v added this code v
-		
-		ArrayList<Course> courses = new ArrayList<Course>();
 		
 		courses.add(course);
 		

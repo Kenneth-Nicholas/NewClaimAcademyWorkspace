@@ -123,13 +123,13 @@
 				
 					<br><br>
 					
-						<form>
+						<form action="SchedulerServlet" method="post">
 						
 							<div class="course-selector">
 						
 							Courses
 						
-								<select class="form-control">
+								<select class="form-control" name="course">
 							
 									<option value="Java Programming">Java Programming</option>
 								
@@ -148,10 +148,12 @@
 								</select>
 						
 							</div>
+							
+							<br>
 						
 						Professors
 							
-							<select class="form-control">
+							<select class="form-control" name="professor">
 							
 								<option value="John White">John White</option>
 								
@@ -166,26 +168,22 @@
 							</select>
 						
 						<br>
-						
-							Room Number
 			
 							<div class="form-group">
 			
-									<label for="Room number">Room number</label>
+									<label for="Room number">Room Number</label>
 				
-								<input type="text" class="form-control" name="Room number" value="roomNumber" id="room-number" placeholder="Room number">
-			
+								<input type="text" class="form-control" name="roomNumber" value="Room Number" id="room-number" >
+
 							</div>
 							
 						<br>
-						
-							Time
 			
 							<div class="form-group">
 			
 									<label for="Time">Time</label>
 				
-								<input type="text" class="form-control" name="time" value="time" id="time" placeholder="Time">
+								<input type="text" class="form-control" name="time" value="Time" id="time" >
 			
 							</div>
 								
@@ -194,7 +192,7 @@
 					<div class="weekDays-selector">
 					
 						<input type="checkbox" name="weekday" value="MONDAY" id="weekday-mon" class="weekday" />
-							
+														
 							<label for="weekday-mon">M</label>
 							
 						<input type="checkbox" name="weekday" value="TUESDAY" id="weekday-tue" class="weekday" />
@@ -217,9 +215,9 @@
 					
 					<br>
 				
-						<p>Date: <input type="text" id="datepicker"></p>
+						<p>Start Date: <input type="text" class="form-control" name="startDate" id="datepicker"></p>
 					
-						<button type="submit">add course</button>
+						<button type="submit" class="btn btn-default">add course</button>
 							
 					</form>
 					
@@ -238,7 +236,7 @@
     						
   							</tr>
  						 
-							<c:forEach items="${courses}" var="course">
+							<c:forEach var="course" items="${courses}">
  						 
 								<tr>      
     						
