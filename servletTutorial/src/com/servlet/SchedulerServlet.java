@@ -36,6 +36,7 @@ public class SchedulerServlet extends HttpServlet {
 	
 		HttpSession session = request.getSession(true);
 		
+		@SuppressWarnings("unchecked")
 		ArrayList<Course> courses = (ArrayList<Course>)session.getAttribute("courses");
 		
 		if(courses == null) {
@@ -62,23 +63,23 @@ public class SchedulerServlet extends HttpServlet {
 		
 		for(int i = 0; i < weekDaysStringArray.length; i++) {
 			
-			if(weekDaysStringArray[i].equals("Monday")) {
+			if(weekDaysStringArray[i].equals("MONDAY")) {
 				
 				weekDays.add(WeekDay.MONDAY);
 				
-			} else if (weekDaysStringArray[i].equals("Tuesday")) {
+			} else if (weekDaysStringArray[i].equals("TUESDAY")) {
 				
 				weekDays.add(WeekDay.TUESDAY);
 				
-			}else if (weekDaysStringArray[i].equals("Wednesday")) {
+			}else if (weekDaysStringArray[i].equals("WEDNESDAY")) {
 				
 				weekDays.add(WeekDay.WEDNESDAY);
 				
-			}else if (weekDaysStringArray[i].equals("Thursday")) {
+			}else if (weekDaysStringArray[i].equals("THURSDAY")) {
 				
 				weekDays.add(WeekDay.THURSDAY);
 				
-			}else if (weekDaysStringArray[i].equals("Friday")) {
+			}else if (weekDaysStringArray[i].equals("FRIDAY")) {
 				
 				weekDays.add(WeekDay.FRIDAY);
 				
